@@ -58,10 +58,8 @@ export default createEslintRule<IOptions[], string>({
   ],
   create(context, [options]) {
     const { onlyIdentifiers, excludeIdentifiers } = options;
-    const onlyIdentifiersEnabled =
-      onlyIdentifiers && onlyIdentifiers?.length > 0;
-    const excludeIdentifiersEnabled =
-      excludeIdentifiers && excludeIdentifiers.length > 0;
+    const onlyIdentifiersEnabled = !!onlyIdentifiers?.length;
+    const excludeIdentifiersEnabled = !!excludeIdentifiers?.length;
     const noIdentifiersSpecified =
       !onlyIdentifiersEnabled && !excludeIdentifiersEnabled;
 
