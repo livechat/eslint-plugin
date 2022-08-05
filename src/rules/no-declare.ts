@@ -67,36 +67,38 @@ export default createEslintRule<IOptions[], string>({
 
     return {
       VariableDeclaration(node) {
-        if (node.declare) {
-          if (noIdentifiersSpecified) {
-            context.report({
-              node,
-              messageId: "declareFound",
-            });
-            return;
-          }
-
-          node.declarations.forEach((declaration) => {
-            if (declaration.id.type === AST_NODE_TYPES.Identifier) {
-              const { name } = declaration.id;
-
-              if (
-                (onlyIdentifiersEnabled && onlyIdentifiers.includes(name)) ||
-                (!onlyIdentifiersEnabled &&
-                  excludeIdentifiersEnabled &&
-                  !excludeIdentifiers.includes(name))
-              ) {
-                context.report({
-                  node: declaration,
-                  messageId: "declareIdentifierFound",
-                  data: {
-                    name,
-                  },
-                });
-              }
-            }
-          });
+        if (!node.declare) {
+          return;
         }
+
+        if (noIdentifiersSpecified) {
+          context.report({
+            node,
+            messageId: "declareFound",
+          });
+          return;
+        }
+
+        node.declarations.forEach((declaration) => {
+          if (declaration.id.type === AST_NODE_TYPES.Identifier) {
+            const { name } = declaration.id;
+
+            if (
+              (onlyIdentifiersEnabled && onlyIdentifiers.includes(name)) ||
+              (!onlyIdentifiersEnabled &&
+                excludeIdentifiersEnabled &&
+                !excludeIdentifiers.includes(name))
+            ) {
+              context.report({
+                node: declaration,
+                messageId: "declareIdentifierFound",
+                data: {
+                  name,
+                },
+              });
+            }
+          }
+        });
       },
     };
   },
