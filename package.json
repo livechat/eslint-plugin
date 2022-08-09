@@ -1,6 +1,6 @@
 {
   "name": "@livechat/eslint-plugin",
-  "version": "0.1.7",
+  "version": "1.0.0",
   "description": "Linting rules plugin for TypeScript ESLint",
   "keywords": [
     "eslint",
