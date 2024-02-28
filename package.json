@@ -34,7 +34,7 @@
     "@typescript-eslint/utils": "^5.32.0",
     "jest": "^28.1.3",
     "ts-jest": "^28.0.7",
-    "tsup": "^6.2.1",
+    "tsup": "^8.0.2",
     "typescript": "^4.7.4"
   }
 }
