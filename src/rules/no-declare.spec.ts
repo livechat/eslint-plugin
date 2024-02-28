@@ -1,8 +1,9 @@
-import { ESLintUtils } from "@typescript-eslint/utils";
+import { TSESLint } from "@typescript-eslint/experimental-utils";
+
 import noDeclareRule from "./no-declare";
 
-const ruleTester = new ESLintUtils.RuleTester({
-  parser: "@typescript-eslint/parser",
+const ruleTester = new TSESLint.RuleTester({
+  parser: require.resolve("@typescript-eslint/parser"),
 });
 
 ruleTester.run("no-declare", noDeclareRule, {

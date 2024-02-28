@@ -3,7 +3,9 @@ import {
   ESLintUtils,
 } from "@typescript-eslint/experimental-utils";
 
-const createEslintRule = ESLintUtils.RuleCreator((ruleName) => ruleName);
+const createEslintRule = ESLintUtils.RuleCreator(
+  (ruleName) => `https://github.com/livechat/eslint-plugin#${ruleName}`
+);
 
 interface IOptions {
   onlyIdentifiers?: string[];
@@ -34,11 +36,6 @@ export default createEslintRule<IOptions[], string>({
               type: "string",
             },
           },
-        },
-      },
-      {
-        type: "object",
-        properties: {
           excludeIdentifiers: {
             type: "array",
             uniqueItems: true,
