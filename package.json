@@ -1,6 +1,6 @@
 {
   "name": "@livechat/eslint-plugin",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Linting rules plugin for TypeScript ESLint",
   "keywords": [
     "eslint",
@@ -10,7 +10,8 @@
   ],
   "main": "dist/index.js",
   "peerDependencies": {
-    "eslint": "^8.0.0"
+    "eslint": "^8.0.0",
+    "@typescript-eslint/experimental-utils": "^5.62.0"
   },
   "files": [
     "dist",
