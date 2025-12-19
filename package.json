@@ -26,7 +26,8 @@
     "build": "tsc"
   },
   "overrides": {
-    "braces": ">=3.0.3"
+    "braces": ">=3.0.3",
+    "rollup": ">=4.22.4"
   },
   "devDependencies": {
     "@types/eslint": "^8.56.4",
