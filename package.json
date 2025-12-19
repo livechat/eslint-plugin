@@ -25,6 +25,9 @@
     "test": "jest --coverage",
     "build": "tsc"
   },
+  "overrides": {
+    "braces": ">=3.0.3"
+  },
   "devDependencies": {
     "@types/eslint": "^8.56.4",
     "@types/estree": "^1.0.5",
