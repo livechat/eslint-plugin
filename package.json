@@ -28,7 +28,8 @@
   "overrides": {
     "braces": ">=3.0.3",
     "cross-spawn": ">=7.0.5",
-    "rollup": ">=4.22.4"
+    "rollup": ">=4.22.4",
+    "flatted": ">=3.4.2"
   },
   "devDependencies": {
     "@types/eslint": "^8.56.4",
